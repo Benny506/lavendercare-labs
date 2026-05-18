@@ -1,0 +1,91 @@
+.lc-global-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Ensure it blocks all clicks */
+  pointer-events: all;
+}
+
+.lc-global-loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(123, 63, 228, 0.1);
+}
+
+.lc-global-loader-spinner-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Beautiful custom spinner */
+.lc-spinner-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(123, 63, 228, 0.15);
+  border-top-color: #7B3FE4;
+  animation: lc-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.lc-spinner-ring-inner {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 3px solid rgba(16, 185, 129, 0.15); /* using success color accent */
+  border-bottom-color: #10b981;
+  animation: lc-spin-reverse 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.lc-loader-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  /* subtle pulse on the logo */
+  animation: lc-pulse 2s ease-in-out infinite;
+}
+
+.lc-loader-title {
+  font-family: 'GT Walsheim Pro', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #101828;
+  margin-bottom: 0.25rem;
+}
+
+.lc-loader-message {
+  font-family: 'GT Walsheim Pro', sans-serif;
+  font-size: 0.875rem;
+  color: #565655;
+}
+
+@keyframes lc-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes lc-spin-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes lc-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}

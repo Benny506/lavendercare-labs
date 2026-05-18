@@ -1,0 +1,128 @@
+.lc-alerts-portal {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10000; /* Ensure it's higher than the GlobalLoader (9999) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  pointer-events: none; /* Let clicks pass through the portal wrapper */
+  width: 100%;
+  max-width: 400px;
+}
+
+.lc-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  pointer-events: auto; /* Re-enable clicks on the alert itself */
+  width: 100%;
+  background: #ffffff;
+  border-left: 4px solid transparent;
+  font-family: 'GT Walsheim Pro', sans-serif;
+  overflow: hidden;
+}
+
+.lc-alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.lc-alert__content {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #344054;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.lc-alert__close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #98a2b3;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.lc-alert__close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #344054;
+}
+
+/* Alert Types */
+
+/* Success */
+.lc-alert--success {
+  border-left-color: var(--bs-success);
+  background-color: var(--bs-success-bg-subtle);
+}
+.lc-alert--success .lc-alert__icon {
+  color: var(--bs-success);
+}
+.lc-alert--success .lc-alert__content {
+  color: var(--bs-success-text-emphasis);
+}
+
+/* Error / Danger */
+.lc-alert--error, .lc-alert--danger {
+  border-left-color: var(--bs-danger);
+  background-color: var(--bs-danger-bg-subtle);
+}
+.lc-alert--error .lc-alert__icon, .lc-alert--danger .lc-alert__icon {
+  color: var(--bs-danger);
+}
+.lc-alert--error .lc-alert__content, .lc-alert--danger .lc-alert__content {
+  color: var(--bs-danger-text-emphasis);
+}
+
+/* Warning */
+.lc-alert--warning {
+  border-left-color: var(--bs-warning);
+  background-color: var(--bs-warning-bg-subtle);
+}
+.lc-alert--warning .lc-alert__icon {
+  color: var(--bs-warning);
+}
+.lc-alert--warning .lc-alert__content {
+  color: var(--bs-warning-text-emphasis);
+}
+
+/* Info */
+.lc-alert--info {
+  border-left-color: #3b82f6; /* Tailwind blue-500 */
+  background-color: #eff6ff; /* Tailwind blue-50 */
+}
+.lc-alert--info .lc-alert__icon {
+  color: #3b82f6;
+}
+.lc-alert--info .lc-alert__content {
+  color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+/* Primary */
+.lc-alert--primary {
+  border-left-color: var(--bs-primary);
+  background-color: var(--bs-primary-bg-subtle);
+}
+.lc-alert--primary .lc-alert__icon {
+  color: var(--bs-primary);
+}
+.lc-alert--primary .lc-alert__content {
+  color: var(--bs-primary-text-emphasis);
+}

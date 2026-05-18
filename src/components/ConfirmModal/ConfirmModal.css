@@ -1,0 +1,29 @@
+ .cm-body {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+ .cm-icon-wrap {
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   background: #eef2ff;
+ }
+ .cm-icon {
+   font-size: 1.6rem;
+ }
+ .cm-icon--primary {
+   color: #6f42c1;
+ }
+ .cm-icon--danger {
+   color: #dc3545;
+ }
+ .cm-icon--warning {
+   color: #ff9800;
+ }
+ .cm-text {
+   margin: 0;
+ }
