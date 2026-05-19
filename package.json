@@ -15,6 +15,7 @@
     "axios": "^1.13.6",
     "bootstrap": "^5.3.8",
     "formik": "^2.4.9",
+    "luxon": "^3.7.2",
     "motion": "^12.38.0",
     "react": "^19.2.4",
     "react-bootstrap": "^2.10.10",
